@@ -9,7 +9,8 @@ import {
 const SERVICES = [
   { id: 'uber', name: 'Uber', color: 'bg-black', icon: '🚕', basePrice: 120 },
   { id: 'ola', name: 'Ola', color: 'bg-yellow-400', icon: '🚗', basePrice: 115 },
-  { id: 'rapido', name: 'Rapido', color: 'bg-yellow-500', icon: '🛵', basePrice: 85 }
+  { id: 'rapido', name: 'Rapido', color: 'bg-yellow-500', icon: '🛵', basePrice: 85 },
+  { id: 'blablacar', name: 'BlaBlaCar', color: 'bg-blue-500', icon: '🚙', basePrice: 70 },
 ];
 
 const VEHICLE_TYPES = [
@@ -17,21 +18,21 @@ const VEHICLE_TYPES = [
     id: 'bike',
     name: 'Moto',
     multiplier: 0.6,
-    img: 'https://mobile-content.uber.com/one-column/1d713c7c-03d6-444f-831e-42c22998a12e.png',
+    img: 'https://m.media-amazon.com/images/I/51PR+oJRg5L._AC_UF1000,1000_QL80_.jpg',
     desc: 'Quick and affordable'
   },
   {
     id: 'auto',
     name: 'Auto',
     multiplier: 1,
-    img: 'https://mobile-content.uber.com/one-column/f305b0c9-94b6-45ef-8919-6bc25b90f41a.png',
+    img: 'https://resize.indiatvnews.com/en/resize/oldbucket/1200_-/businessindia/IndiaTv0d3bc5_ola.jpg',
     desc: 'Common city travel'
   },
   {
     id: 'sedan',
     name: 'Sedan',
     multiplier: 1.5,
-    img: 'https://mobile-content.uber.com/one-column/70c57c7c-486a-4950-89bc-99238383df82.png',
+    img: 'https://cdni.autocarindia.com/ExtraImages/20230615030844_Ola.jpg',
     desc: 'Comfortable 4-seaters'
   }
 ];
@@ -133,8 +134,8 @@ const RiderDashboard = () => {
                     key={s.id}
                     onClick={() => dispatch({ type: 'UPDATE_RIDE', payload: { service: s.id } })}
                     className={`p-3 rounded-2xl border-2 transition-all flex flex-col items-center gap-1 group ${state.rideDetails.service === s.id
-                        ? 'border-blue-500 bg-blue-50 text-blue-600'
-                        : 'border-slate-100 text-slate-400 hover:border-slate-200'
+                      ? 'border-blue-500 bg-blue-50 text-blue-600'
+                      : 'border-slate-100 text-slate-400 hover:border-slate-200'
                       }`}
                   >
                     <span className="text-xl group-hover:scale-125 transition-transform">{s.icon}</span>
